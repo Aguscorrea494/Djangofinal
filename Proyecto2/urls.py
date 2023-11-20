@@ -20,5 +20,5 @@ from appcoder.views import crear_curso
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('agregar_curso/', crear_curso),
+    path('agregar_cursor/', crear_curso),
 ]
