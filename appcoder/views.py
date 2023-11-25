@@ -5,7 +5,12 @@ from appcoder.models import Curso
 
 def crear_curso(request):
     curso = Curso(nombre="Python", camada=47785)
-
+    contexto = {"Curso": curso}
     curso.save()
 
-    return HttpResponse(f"Su curso es {curso.nombre} y la Camada es {curso.camada}")
+    return render(request, template_name= "index.html", context= contexto)
+
+def show_html(request):
+    curso = Curso.objects.first()
+    contexto = {"Curso": curso}
+    return render(request, template_name= "index.html", context= contexto)
